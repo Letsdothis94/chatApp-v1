@@ -1,11 +1,12 @@
 import './App.css'
+import Login from './pages/login/Login';
 
 function App() {
 
   return (
-    <>
-      <button className="btn btn-accent">Accent</button>
-    </>
+    <div className='p-4 h-screeen flex items-center justify-center'>
+      <Login />
+    </div>
   );
 }
 
