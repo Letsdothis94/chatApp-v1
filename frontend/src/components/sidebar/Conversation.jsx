@@ -1,5 +1,4 @@
 import React from 'react'
-import useGetConversations from '../../hooks/useGetConversations.js';
 import useConversation from '../../store/useConversation.js';
 import { useSocketContext } from '../../context/SocketContext.jsx';
 
