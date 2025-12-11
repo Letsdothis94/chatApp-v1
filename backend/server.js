@@ -6,8 +6,7 @@ import connectToDB from "./config/db.js";
 import authRouter from "./routes/auth.routes.js";
 import messageRouter from "./routes/message.routes.js";
 import userRouter from "./routes/user.routes.js";
-
-const app = express();
+import { app, server } from "./socket/socket.js";
 const PORT =  process.env.PORT || 5000;
 
 app.use(express.json());
@@ -21,7 +20,7 @@ app.get("/", (req, res) => {
     res.send("Hello world!!");
 })
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectToDB();
     console.log(`Listening on port: ${PORT}`);
 })
