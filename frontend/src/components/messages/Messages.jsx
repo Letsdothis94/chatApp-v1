@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import Message from './Message'
 import useGetMessages from '../../hooks/useGetMessages';
+import useListenMessages from '../../hooks/useListenMessages';
+
 
 const Messages = () => {
   const { messages, loading } = useGetMessages();
   const lastMessageRef = useRef();
+  useListenMessages();
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,7 +17,7 @@ const Messages = () => {
 
 
   return (
-    <div className="flex flex-col px-4 overflow-auto">
+    <div className="flex-1 px-4 overflow-auto">
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => (
